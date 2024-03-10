@@ -1,0 +1,393 @@
+<html lang="en" data-bs-theme="light" class="fontawesome-i2svg-active fontawesome-i2svg-complete">
+
+<head>
+    <title>
+        Deposits - LamboDoubler
+    </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+
+
+    <!-- main css for template -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+
+    <!-- ===============>> Preloader start here <<================= -->
+    <div class="preloader" style="transition: opacity 0.5s ease 0s; opacity: 0; display: none;">
+        <img src="assets/images/loader.gif" alt="preloader icon">
+    </div>
+    <!-- ===============>> Preloader end here <<================= -->
+
+
+
+    <!-- ===============>> light&dark switch start here <<================= -->
+    <div class="lightdark-switch">
+        <!-- <span class="dark-btn" id="btnSwitch"><img src="assets/images/icon/moon.svg" alt="light-dark-switchbtn"
+                class="swtich-icon"></span> -->
+    </div>
+    <!-- ===============>> light&dark switch start here <<================= -->
+
+
+
+
+
+    <!-- ===============>> Header section start here <<================= -->
+    <header class="header-section bg-color-3 header-fixed fadeInUp">
+        <div class="header-bottom">
+            <div class="container">
+                <div class="header-wrapper">
+                    <div class="logo">
+                        <a href="index-3.html">
+                            <h4 class="m-0">LamboDoubler</h4>
+                        </a>
+                    </div>
+                    <div class="menu-area">
+                        <ul class="menu menu--style1">
+                            <li>
+                                <a href="./dashboard.html">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="./deposit.html">Deposits</a>
+                            </li>
+                            <li>
+                                <a href="./payout.html">Payouts</a>
+                            </li>
+                            <li>
+                                <a href="#" id="btnLogout">Logout</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="header-action">
+                        <div class="menu-area">
+                            <div class="header-btn">
+
+                            </div>
+
+                            <!-- toggle icons -->
+                            <div class="header-bar d-lg-none home1">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ===============>> Header section end here <<================= -->
+    <!-- ================> Page header start here <================== -->
+    <section class="page-header bg--cover" style="background-image:url(assets/images/header/1.png)">
+        <div class="container">
+            <div class="page-header__content aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
+                <h2>Deposits</h2>
+                <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item "><a href="dashboard.html">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Deposits</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="page-header__shape">
+                <span class="page-header__shape-item page-header__shape-item--1"><img src="assets/images/header/2.png"
+                        alt="shape-icon"></span>
+            </div>
+        </div>
+    </section>
+    <!-- ================> Page header end here <================== -->
+
+    <!-- ===============>> Service section start here <<================= -->
+    <div class="service-details padding-top padding-bottom section-bg-color">
+        <div class="container">
+            <div class="service-details__wrapper">
+                <div class="row flex-lg-row-reverse g-5">
+                    <div class="col-lg-8">
+                        <div class="service-details__item">
+                            <div class="service-details__item-inner ">
+                                <div class="service-details__content" data-aos="fade-up" data-aos-duration="900">
+                                    <h3 class="mb-15"> Deposit Amount into Your Account
+                                    </h3>
+                                    <form action="./includes/worker.php" method="post" class="mb-4" id="depositForm">
+                                        <div class="form-group mb-3">
+                                            <label for="">Amount</label>
+                                            <input type="number" required class="form-control" step="0.00000001"
+                                                name="amount" value="" placeholder="Enter Amount" min="500" id="">
+                                            <small>Minimum Amount for the deposit is : <span
+                                                    class="minAmount">500.00 TRX</span></small>
+                                            <div class="form-group d-grid">
+                                                <input type="hidden" name="action" value="deposit-and-confirm">
+                                                <button class="btn btn-success btn-block btnGenerate" type="submit">Generate Payment Details</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                        
+                                        <div class="paymentDetails d-none">
+                                            <div class="form-group mb-2">
+                                                <label for="">Send this Exact Amount in Tron (TRX)</label>
+                                                <input type="text" name="pay_amount" class="form-control" disabled id="">
+                                                <small>Click on address to copy address or scan QR code below</small>
+                                            </div>
+                                            <div class="form-group mb-2 " id="pay_address1">
+                                                <label for="">Send Amount to this address</label>
+                                                <div>
+                                                    <h5></h5>
+                                                    <input type="hidden" name="pay_address" class="form-control" disabled id="address_value">
+                                                </div>
+                                                
+                                                <small id="expiryText"></small>
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <div id="qrCode" style="border: 3px solid white;"></div>
+                                                </div>
+                                                <small class="mt-2">Note: Your transaction will be approved instantly when received, make sure the received amount is equal to the above mentioned amount</small>
+                                            </div>
+                                        </div>
+                                        <small><b>Make sure you deposit amount with same address which you used to
+                                                register this account.</b></small><br><br>
+                                        <!-- <small>You will earn bonus on your amount after 24 hours of your deposit
+                                        confirmation.</small>
+                                    <small>Make Sure You Give Correct Wallet Address with correct Network. Once you have
+                                        deposited the amount, then click on deposit button to record transaction and
+                                        then your transaction will be confirmed within minutes.</small>
+                                    <small>After making a deposit, click on "Confirm Button" and wait for
+                                        confirmation.</small> -->
+
+                                        
+
+                                    </form>
+
+                                    <h4>Your Deposits List</h4>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Amount</th>
+                                                    <th>Requested On</th>
+                                                    <th>Type</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="depList"></tbody>
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-8  col-12">
+                        <div class="row g-4">
+                            <div class="col-12" id="refContainer">
+                                <div class="sidebar__search" data-aos="fade-up" data-aos-duration="800">
+                                    <h6 class="mb-10 text-center">Invest Now</h6>
+                                    <p class="text-justify">Invest now and get <span
+                                            style="font-size: 20px; font-weight: bold">125%</span> of your investment in
+                                        <span style="font-size: 20px; font-weight: bold">24 Hours</span>. The larger the
+                                        deposit,
+                                        the
+                                        greater the profit. Earn money easily! <br>
+
+                                    </p>
+                                    <div class="sidebar__search-body">
+                                        <div class="input d-grid">
+                                            <a class="btn btn-primary btn-block" href="./deposit.html">Invest Now</a>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="sidebar__search" data-aos="fade-up" data-aos-duration="800">
+                                    <h6 class="mb-10 text-center">Total Deposits</h6>
+                                    <div class="sidebar__search-body">
+                                        <div class="input">
+                                            <input disabled type="text" name="total_dep" class="form-control"
+                                                placeholder="Deposit">
+
+                                            <small>You will earn bonus on your amount after 24 hours of your deposit
+                                                confirmation.</small>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="sidebar__search" data-aos="fade-up" data-aos-duration="800">
+                                    <h6 class="mb-10 text-center">Available Balance</h6>
+                                    <div class="sidebar__search-body">
+                                        <div class="input">
+                                            <input disabled type="text" name="total_bal" class="form-control mb-3"
+                                                placeholder="Balance">
+                                            <div class="form-group d-grid">
+                                                <a href="./deposit.php" class="btn btnReinvest btn-primary">Reinvest
+                                                    Now</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="sidebar__search" data-aos="fade-up" data-aos-duration="800">
+                                    <h6 class="mb-10 text-center">Total Payouts</h6>
+                                    <div class="sidebar__search-body">
+                                        <div class="input">
+                                            <input disabled name="total_pay" type="text" class="form-control"
+                                                placeholder="Amount">
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+                        <!-- <div class="sidebar">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="sidebar__search" data-aos="fade-up" data-aos-duration="800">
+                                <h6 class="mb-10 text-center">Total Payouts</h6>
+                                <div class="sidebar__search-body">
+                                    <div class="input">
+                                        <input disabled type="text" name="total_pay" class="form-control"
+                                            placeholder="Amount">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="sidebar__search" data-aos="fade-up" data-aos-duration="800">
+                                <h6 class="mb-10 text-center">Available Balance</h6>
+                                <div class="sidebar__search-body">
+                                    <div class="input">
+                                        <input disabled type="text" name="total_bal" class="form-control"
+                                            placeholder="Balance">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="sidebar__search" data-aos="fade-up" data-aos-duration="800">
+                                <h6 class="mb-10 text-center">Total Deposits</h6>
+                                <div class="sidebar__search-body">
+                                    <div class="input">
+                                        <input disabled type="text" name="total_dep" class="form-control"
+                                            placeholder="Deposit">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===============>> Service section start here <<================= -->
+
+    <!-- ===============>> footer start here <<================= -->
+    <footer class="footer brand-1">
+        <div class="container">
+            <div class="footer__wrapper">
+                
+                <div class="footer__bottom">
+                    <div class="footer__end">
+                        <div class="footer__end-copyright">
+                            <p class=" mb-0">© 2023 All Rights Reserved By LamboDoubler</p>
+                        </div>
+                        <div>
+                            <ul class="social">
+                                <li class="social__item">
+                                    <a href="https://t.me/LamboDoubleronline"
+                                        class="social__link social__link--style22 "><i class="fab fa-telegram"></i></a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__shape">
+            <span class="footer__shape-item footer__shape-item--1"><img src="assets/images/footer/1.png"
+                    alt="shape icon"></span>
+            <span class="footer__shape-item footer__shape-item--2"> <span></span> </span>
+        </div>
+    </footer>
+    <!-- ===============>> footer end here <<================= -->
+
+
+
+    <!-- ===============>> scrollToTop start here <<================= -->
+    <a href="#" class="scrollToTop scrollToTop--home1"
+        style="display:flex; justify-content: center; align-items: center; bottom: 7%; opacity: 1; transition: all 0.2s ease 0s;"><svg
+            class="svg-inline--fa fa-arrow-up-from-bracket" aria-hidden="true" focusable="false" data-prefix="fas"
+            data-icon="arrow-up-from-bracket" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+            data-fa-i2svg="">
+            <path fill="currentColor"
+                d="M246.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 109.3V320c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64c0 53 43 96 96 96H352c53 0 96-43 96-96V352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V352z">
+            </path>
+        </svg></a>
+    <!-- ===============>> scrollToTop ending here <<================= -->
+
+
+
+    <!-- vendor plugins -->
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/all.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/fslightbox.js"></script>
+    <script src="assets/js/purecounter_vanilla.js"></script>
+    <script src="./assets/js/notify.min.js"></script>
+
+    <script src="assets/js/custom.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script>
+        const page = "deposits";
+    </script>
+    <script src="./assets/js/firebase-setup.js" type="module"></script>
+
+</body>
+
+</html>

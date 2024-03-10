@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=1024"> -->
+    <title>LamboDoubler</title>
+    <link rel="stylesheet" href="./dist/css/plugins.css">
+    <link rel="stylesheet" href="./dist/css/main.css">
+    
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            max-height: 100vh;
+            overflow: hidden;
+            background: url("./dist/images/Lambod2.jpg");
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size:80%;
+            background-color: black;
+        }
+        .joinBox {
+            width: 300px;
+            position: fixed;
+            margin-left: 15px;
+            margin-top: 18rem;
+            /* position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-185%, -30%); */ 
+        }
+        .joinBox h3 {
+            /* color: white; */
+            text-align: center;
+        }
+        .centerHeading {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            font-size: 30px;
+        }
+        .form-control {
+            height: 35px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+        @media screen and (max-width: 768px) {
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+                background: url("./dist/images/lamboold-mobile1.png");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .joinBox {
+                margin: 375px 0;
+            }
+            .payoutHeading {
+                right: auto;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 class="centerHeading"></h1>
+    <div class="joinBox">
+        
+                <section class="p-0 calculater" >
+                    
+                    <div class="container-fluid position-relative p-4 cal-form" style="background-color: rgb(0, 0, 0);">
+                        <div class="background-image-maker rounded"></div>
+                        <div class="holder-image">
+                            <img src="dist/images/calculater-bg2.jpg" alt="" class="img-fluid d-none">
+                        </div>
+                        <div class="row">
+                            
+                            <div class="col-12 col-lg-12 wow d-flex align fadeIn text-center d-flex align-self-center text-lg-left" data-animate="fadeIn" data-duration="1.0s" data-delay="0.2s" >
+                                <h2 class="text-white m-0">Join Now!</h2>
+                            </div>
+                            <div class="col-12 col-lg-12 ml-auto wow fadeIn text-center text-lg-left" data-animate="fadeIn" data-duration="1.0s" data-delay="0.4s" >
+                                <div class="row">
+                                    <div class="col-12 col-md-12">
+                                        <form method="post" action="" id="form">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <input name="wallet" type="text" class="form-control border-black" placeholder="Enter Your TRX Address Here">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <input type="hidden" name="action" value="register">
+                                                        <input type="hidden" name="parent" value="">
+                                                        <input type="hidden" name="coin" value="trx">
+                                                        <button type="submit" class="btn btn-primary btn-block" style="height: 35px;">Join Now</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        
+        
+        
+    </div>
+    <h4 class="payoutHeading">PAYOUT GUARANTEED</h4>
+    <script>
+        const page = "user-index";
+    </script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script type="module" src="./assets/js/firebase-setup.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+  <title>Admin - LamboDoubler</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/aos.css">
+  <link rel="stylesheet" href="../assets/css/all.min.css">
+
+  <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+
+
+
+  <!-- main css for template -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- ===============>> Preloader start here <<================= -->
+  <div class="preloader">
+    <img src="../assets/images/logo/preloader.png" alt="preloader icon">
+  </div>
+  <!-- ===============>> Preloader end here <<================= -->
+
+
+
+  <!-- ===============>> light&dark switch start here <<================= -->
+  <div class="lightdark-switch">
+    <!-- <span class="dark-btn" id="btnSwitch"><img src="assets/images/icon/moon.svg" alt="light-dark-switchbtn"
+        class="swtich-icon"></span> -->
+  </div>
+  <!-- ===============>> light&dark switch start here <<================= -->
+
+
+  <!-- ===============>> Header section start here <<================= -->
+  <header class="header-section bg-color-3 d-none">
+    <div class="header-bottom">
+      <div class="container">
+        <div class="header-wrapper">
+          <div class="logo">
+            <a href="index-2.html">
+              <img class="dark" src="../assets/images/logo/logo.png" alt="logo">
+            </a>
+          </div>
+          <div class="menu-area">
+            <ul class="menu menu--style1">
+              
+            </ul>
+
+          </div>
+          <div class="header-action">
+            <div class="menu-area">
+              <div class="header-btn">
+                <!-- <a href="signup.html" class="trk-btn trk-btn--border trk-btn--primary">
+                  <span>Join Now</span>
+                </a> -->
+              </div>
+
+              <!-- toggle icons -->
+              <div class="header-bar d-lg-none home1">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ===============>> Header section end here <<================= -->
+
+
+
+
+  <!-- ===============>> account start here <<================= -->
+  <section class="account padding-top padding-bottom sec-bg-color2">
+    <div class="container">
+      <div class="account__wrapper" data-aos="fade-up" data-aos-duration="800">
+        <div class="account__inner">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="account__thumb">
+                <img src="../assets/images/account/1.png" alt="account-image" class="dark">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="account__content account__content--style2">
+
+                <!-- account tittle -->
+                <div class="account__header">
+                  <h2>Log in</h2>
+                </div>
+
+
+                <!-- account form -->
+                <form action="../includes/worker.php" method="post" id="adminform" class="account__form needs-validation" novalidate>
+                  <div class="row g-4">
+                    <div class="col-12">
+                      <div>
+                        <label for="account-email" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" id="account-email" placeholder="Enter your email"
+                          required>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-pass">
+                        <label for="account-pass"  class="form-label">Password</label>
+                        <input type="password" name="pass" class="form-control showhide-pass" id="account-pass"
+                          placeholder="Password" required>
+
+                        <button type="button" id="btnToggle" class="form-pass__toggle"><i id="eyeIcon"
+                            class="fa fa-eye"></i></button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="account__check">
+
+                    <!-- <div class="account__check-remember">
+                      <input type="checkbox" class="form-check-input" value="" id="terms-check">
+                      <label for="terms-check" class="form-check-label">
+                        Remember me
+                      </label>
+                    </div> -->
+                    <!-- <div class="account__check-forgot">
+                      <a href="forgot-pass-2.html">Forgot Password?</a>
+                    </div> -->
+                  </div>
+                  <input type="hidden" name="action" value="login">
+                  <button type="submit" class="trk-btn trk-btn--border trk-btn--primary d-block mt-4">Sign in</button>
+                </form>
+
+
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===============>> account end here <<================= -->
+
+
+
+
+
+
+
+  <!-- vendor plugins -->
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/all.min.js"></script>
+  <script src="../assets/js/swiper-bundle.min.js"></script>
+  <script src="../assets/js/aos.js"></script>
+  <script src="../assets/js/fslightbox.js"></script>
+  <script src="../assets/js/purecounter_vanilla.js"></script>
+
+
+
+  <script src="../assets/js/custom.js"></script>
+  <script> const page = "admin-login";</script>
+  <script src="../assets/js/firebase-setup.js" type="module"></script>
+
+
+</body>
+
+</html>
