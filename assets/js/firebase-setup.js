@@ -703,7 +703,7 @@ if (page == "user-index") {
     ) {
         // Redirect to index.html
         if (page != "admin-login" && page != "admin-dashboard") {
-            window.location.href = './index.html';
+            // window.location.href = './index.html';
         } else {
             if (page == "admin-dashboard") {
                 if (sessionStorage.getItem('is_admin') === null) {
